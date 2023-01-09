@@ -15,8 +15,12 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    @can('lead-manaselement')
+                    @if(Auth::user()->role() == 'admin')
                     <x-nav-link :href="route('lead.index')" :active="request()->routeIs('lead.index')">
                         {{ __('Leads') }}
+                        @endif
+                        @endcan
                     </x-nav-link>
                 </div>
             </div>

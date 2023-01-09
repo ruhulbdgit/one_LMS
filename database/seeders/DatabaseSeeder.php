@@ -19,55 +19,8 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run(){
-//    {
-//        $role->givePermissionTo($permission);
-//        $permission->assignRole($role);
-//
-//        $this->create_user_with_role('Communication', 'Communication Team', 'communication@lms.test');
-//        $teacher = $this->create_user_with_role('Teacher', 'Teacher', 'teacher@lms.test');
-//        $this->create_user_with_role('Leads', 'Leads', 'leads@lms.test');
-//
-//        //create leads
-//        Lead::factory()->create();
-//        $course = Course::create([
-//            'name' => 'laravel',
-//            'description' => 'Laravel is a framework of Php ,its a great opportunity for all to develop any kind of application',
-//            'image' => 'https://laravel.com/img/logomark.min.svg',
-//            'user_id' => $teacher->id,
-//            'user_id' => 1,
-//        ]);
-//        Curriculum::factory()->create();
-//        $communicationRole = Role::create([
-//            'name' => 'communication'
-//        ]);
-//        $user->new User([
-//        'name' => 'Communication Team',
-//        'email' => 'communication@lms.test',
-//        'password' => bcrypt('password'),
-//    ]);
-//        $user->assignRole($communicationRole);
-//
-//
-//     private function create_user_with_role($type, $name, $email) {
-//        $role = Role::create([
-//            'name' => $type
-//        ]);
-//
-//        $user = User::create([
-//            'name' => $name,
-//            'email' => $email,
-//            'password' => bcrypt('password')
-//        ]);
-//
-//        if($type == 'Super Admin') {
-//            $role->givePermissionTo(Permission::all());
-//        } elseif($type == 'Leads') {
-//            $role->givePermissionTo('lead-management');
-//        }
-//
-//        $user->assignRole($role);
-//
-//        return $user;
+/
+/
         $defaultPermissions = ['lead-management', 'create-admin', 'user-management'];
         foreach($defaultPermissions as $permission) {
             Permission::create(['name' => $permission]);
