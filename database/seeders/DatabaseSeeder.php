@@ -19,8 +19,8 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run(){
-/
-/
+
+
         $defaultPermissions = ['lead-management', 'create-admin', 'user-management'];
         foreach($defaultPermissions as $permission) {
             Permission::create(['name' => $permission]);
@@ -41,6 +41,7 @@ class DatabaseSeeder extends Seeder
             'description' => 'Laravel is a web application framework with expressive, elegant syntax. We’ve already laid the foundation — freeing you to create without sweating the small things.',
             'image' => 'https://laravel.com/img/logomark.min.svg',
             'user_id' => $teacher->id,
+            'price' => 500
 
         ]);
 

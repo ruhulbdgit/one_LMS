@@ -15,13 +15,15 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    @can('lead-manaselement')
-                    @if(Auth::user()->role() == 'admin')
+
+                    @can ('lead-management')
                     <x-nav-link :href="route('lead.index')" :active="request()->routeIs('lead.index')">
                         {{ __('Leads') }}
-                        @endif
-                        @endcan
+                        <x-nav-link :href="route('admission')" :active="request()->routeIs('admission')">
+                            {{ __('Admission') }}
+                        </x-nav-link>
                     </x-nav-link>
+                    @endcan
                 </div>
             </div>
 
@@ -44,6 +46,11 @@
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Profile') }}
                         </x-dropdown-link>
+                        @can ('user-management')
+                        <x-dropdown-link :href="route('user.index')">
+                            {{ __('Users') }}
+                        </x-dropdown-link>
+                        @endcan
 
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
@@ -90,7 +97,6 @@
                 <x-responsive-nav-link :href="route('profile.edit')">
                     {{ __('Profile') }}
                 </x-responsive-nav-link>
-
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
