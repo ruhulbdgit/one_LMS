@@ -16,7 +16,7 @@
 
             @if(!empty($lead_id))
                 <div class="mb-4">
-                        <select wire:change="courseSelected" wire:model.lay="course_id" class="lms-input">
+                        <select wire:change="courseSelected" wire:model.lazy="course_id" class="lms-input">
                             <option value="">Select course</option>
                             @foreach($courses as $course)
                                 <option value="{{$course->id}}">{{$course->name}}</option>

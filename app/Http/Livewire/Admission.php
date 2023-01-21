@@ -6,6 +6,7 @@ use App\Models\Course;
 use App\Models\Invoice;
 use App\Models\Invoice_items;
 use App\Models\Lead;
+use App\Models\Payment;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
@@ -61,6 +62,12 @@ class Admission extends Component
         ]);
 
         $this->selectedCourse->students()->attach($user->id);
+        if(!empty($this->payment)){
+            Payment::create([
+            'amount' => $this->payment,
+            'invoice-id' => $invoice->id,
+            ]);
+        }
 
 
         $this->selectedCourse = null;

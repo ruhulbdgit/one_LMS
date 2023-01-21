@@ -5,7 +5,8 @@
 
         @error('name')
         <div class="text-red-500 text-sm mt-2">{{ $message }}</div>
-        @enderror</div>
+        @enderror
+    </div>
     <h3 class="font-semibold" >Permissions</h3>
     <div class="flex flex-wrap -mx-4">
         @foreach($permissions as $permission)
